@@ -1,52 +1,54 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 body {
-  /* font-family: "Poppins", sans-serif;
-    font-family: "Inter", sans-serif;
-    font-family: "Roboto", sans-serif; */
   font-family: "Nunito", sans-serif;
   background: url("../static/images/img-3.jpg");
   margin: 0;
   padding: 0;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   backdrop-filter: blur(4px);
   color: white;
+  height: 100%;
 }
 
+/* Header Section */
 header {
-  /* background-color: #002244; */
   color: #fff2df;
-  border-bottom: solid 3px;
 }
+
+/* Title */
 .title {
   margin: 0px;
-  padding-top: 30px;
   text-align: center;
   font-size: 70px;
-  /* font-style: italic; */
 }
+
+/* Tagline */
 .tagline {
   margin: 0px;
   padding-bottom: 30px;
   text-align: center;
   font-size: 25px;
-  /* font-style: oblique; */
 }
 
-.section1 {
+/* .section1 {
   border-bottom: 2px solid black;
-  min-height: 500px;
-  backdrop-filter: blur(10px);
+} */
+
+.section1 {
+  border: 2px solid red;
+  width: fit-content;
+  margin: auto;
 }
 
 table.table1 {
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   font-size: 20px;
-  /* font-style: oblique; */
   font-weight: 400;
 }
+
 td.label {
   width: 300px;
   height: 50px;
@@ -60,12 +62,8 @@ select {
   padding: 5px;
   width: 200px;
   font-size: 20px;
-  font-family: "Lora", serif;
-  /* font-style: oblique; */
   font-weight: 400;
-  /* border: solid 2px #ffe5be; */
   border-radius: 10px;
-  font-family: "Nunito", sans-serif;
   background-color: transparent;
   color: #fff;
   border: none;
@@ -74,6 +72,8 @@ select {
 option {
   background-color: #333;
   overflow: hidden;
+  border: none;
+  outline: none;
 }
 
 .button {
@@ -83,56 +83,40 @@ option {
 }
 
 .btn {
-  padding: 5px;
-  width: 200px;
-  height: 50px;
-  font-size: 18px;
-  font-family: "Lora", serif;
-  font-style: oblique;
-  font-weight: 900;
+  border: 2px solid #ffe5be;
   background-color: transparent;
   color: #fff2df;
-  border: solid 2px #ffe5be;
-  border-radius: 10px;
+  border-radius: 5px;
+  font-size: 28px;
+  padding: 10px;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .btn:hover {
   background-color: #ffe5be;
   color: #333;
-  box-shadow: 1px 1px 5px #ffe5be;
+  box-shadow: 1px 1px 5px #3e3e3e;
 }
 
 .prediction {
   padding-bottom: 50px;
   border-bottom: 2px solid;
 }
-table.table2 {
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 tr.r1 {
   font-size: 20px;
-  font-style: oblique;
-  font-weight: 400;
-}
-tr.r2 {
-  font-size: 20px;
-  font-style: oblique;
-  font-weight: 900;
 }
 
-table.table3 {
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  outline: 2px solid black;
+tr.r2 {
+  font-size: 20px;
 }
+
 td.result {
   width: 300px;
   height: 50px;
 }
+
 .button2 {
   text-align: center;
   margin-top: 45px;
@@ -149,7 +133,6 @@ td.result {
   padding-left: 150px;
   padding-right: 150px;
   font-size: 20px;
-  font-style: oblique;
 }
 
 .footer {
@@ -157,14 +140,30 @@ td.result {
   flex-wrap: wrap;
   justify-content: center;
   color: #fff2df;
-  background-color: #002244;
+  /* background-color: #002244; */
   flex-direction: column;
   align-items: center;
+  margin-top: 220px;
 }
 
 .membersName ul li {
   list-style: none;
   font-size: 24px;
+}
+
+footer a {
+  color: #fff2df;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  line-height: 2px;
+}
+
+footer a:active,
+a:visited {
+  color: #fff2df;
 }
 
 #developer {
@@ -184,11 +183,26 @@ td.result {
   border: none;
   color: #fff2df;
   font-size: 20px;
-  padding-top:10px;
+  padding-top: 10px;
 }
 
 .footer button:hover {
   cursor: pointer;
+}
+
+.prediction,
+.section1 {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(100px);
+  width: fit-content;
+  padding: 2rem;
+  margin: auto;
+  color: #fff;
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 768px) {
