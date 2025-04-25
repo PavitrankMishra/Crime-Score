@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  /* font-family: "Poppins", sans-serif;
+    font-family: "Inter", sans-serif;
+    font-family: "Roboto", sans-serif; */
+  font-family: "Nunito", sans-serif;
+  background: url("../static/images/img-3.jpg");
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  backdrop-filter: blur(4px);
+  color: white;
+}
+
+header {
+  /* background-color: #002244; */
+  color: #fff2df;
+  border-bottom: solid 3px;
+}
+.title {
+  margin: 0px;
+  padding-top: 30px;
+  text-align: center;
+  font-size: 70px;
+  /* font-style: italic; */
+}
+.tagline {
+  margin: 0px;
+  padding-bottom: 30px;
+  text-align: center;
+  font-size: 25px;
+  /* font-style: oblique; */
+}
+
+.section1 {
+  border-bottom: 2px solid black;
+  min-height: 500px;
+  backdrop-filter: blur(10px);
+}
+
+table.table1 {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  /* font-style: oblique; */
+  font-weight: 400;
+}
+td.label {
+  width: 300px;
+  height: 50px;
+}
+td.sel {
+  width: 300px;
+  height: 50px;
+}
+
+select {
+  padding: 5px;
+  width: 200px;
+  font-size: 20px;
+  font-family: "Lora", serif;
+  /* font-style: oblique; */
+  font-weight: 400;
+  /* border: solid 2px #ffe5be; */
+  border-radius: 10px;
+  font-family: "Nunito", sans-serif;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+}
+
+option {
+  background-color: #333;
+  overflow: hidden;
+}
+
+.button {
+  margin: 25px;
+  text-align: center;
+  padding: 20px;
+}
+
+.btn {
+  padding: 5px;
+  width: 200px;
+  height: 50px;
+  font-size: 18px;
+  font-family: "Lora", serif;
+  font-style: oblique;
+  font-weight: 900;
+  background-color: transparent;
+  color: #fff2df;
+  border: solid 2px #ffe5be;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #ffe5be;
+  color: #333;
+  box-shadow: 1px 1px 5px #ffe5be;
+}
+
+.prediction {
+  padding-bottom: 50px;
+  border-bottom: 2px solid;
+}
+table.table2 {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+tr.r1 {
+  font-size: 20px;
+  font-style: oblique;
+  font-weight: 400;
+}
+tr.r2 {
+  font-size: 20px;
+  font-style: oblique;
+  font-weight: 900;
+}
+
+table.table3 {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  outline: 2px solid black;
+}
+td.result {
+  width: 300px;
+  height: 50px;
+}
+.button2 {
+  text-align: center;
+  margin-top: 45px;
+}
+
+#about {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 30px;
+  color: #002244;
+}
+
+#introduction {
+  padding-left: 150px;
+  padding-right: 150px;
+  font-size: 20px;
+  font-style: oblique;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #fff2df;
+  background-color: #002244;
+  flex-direction: column;
+  align-items: center;
+}
+
+.membersName ul li {
+  list-style: none;
+  font-size: 24px;
+}
+
+#developer {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.membersName ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer button {
+  background-color: transparent;
+  border: none;
+  color: #fff2df;
+  font-size: 20px;
+  padding-top:10px;
+}
+
+.footer button:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 50px;
+    padding-top: 20px;
+  }
+
+  .tagline {
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+
+  table.table1,
+  table.table2,
+  table.table3 {
+    font-size: 16px;
+    width: 90%;
+  }
+
+  td.label,
+  td.sel,
+  td.result {
+    width: auto;
+    display: block;
+    text-align: center;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  #introduction {
+    padding: 20px;
+    font-size: 18px;
+  }
+
+  .membersName ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .membersName ul li {
+    font-size: 20px;
+  }
+}
+
+/* For mobile phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .title {
+    font-size: 36px;
+  }
+
+  .tagline {
+    font-size: 18px;
+  }
+
+  .btn {
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+  }
+
+  .button,
+  .button2 {
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .footer {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+  }
+
+  .membersName ul {
+    padding: 0;
+  }
+
+  #about {
+    font-size: 24px;
+  }
+
+  table.table1,
+  table.table2,
+  table.table3 {
+    margin-top: 20px;
+  }
+}
