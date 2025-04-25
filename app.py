@@ -1,7 +1,9 @@
 from flask import Flask, request, render_template 
 import pickle 
 import math
+import os 
 
+# Load the model
 model = pickle.load(open('Best_model.pkl', 'rb')) 
 
 app = Flask(__name__) 
@@ -12,6 +14,7 @@ def index():
 
 @app.route('/predict', methods=['POST']) 
 def predict_result(): 
+    # Mappings
     city_names = {
         '0': 'Ahmedabad', '1': 'Bengaluru', '2': 'Chennai', '3': 'Coimbatore', '4': 'Delhi',
         '5': 'Ghaziabad', '6': 'Hyderabad', '7': 'Indore', '8': 'Jaipur', '9': 'Kanpur',
@@ -31,23 +34,24 @@ def predict_result():
         '14': 184.10, '15': 25.00, '16': 20.50, '17': 50.50, '18': 45.80
     }
 
-    # Get inputs
+    # Get input values
     year = int(request.form['year']) 
-    city_code = request.form["city"]     # Keep as string to access dictionary
-    crime_code = request.form['crime']   # Keep as string
+    city_code = request.form["city"]
+    crime_code = request.form['crime']
 
-    # Get base population and apply 1% annual growth
+    # Calculate population growth
     pop = float(population[city_code])
     year_diff = year - 2011
-    pop += 0.01 * year_diff * pop
+    pop += 0.01 * year_diff * pop  # 1% annual growth
 
-    # Model prediction
+    # Predict crime rate
     crime_rate = model.predict([[year, int(city_code), pop, int(crime_code)]])[0]
 
-    # Interpret results
+    # Get display values
     city_name = city_names[city_code]
     crime_type = crimes_names[crime_code]
 
+    # Evaluate crime status
     if crime_rate <= 1:
         crime_status = "Very Low Crime Area" 
     elif crime_rate <= 5:
@@ -57,6 +61,7 @@ def predict_result():
     else:
         crime_status = "Very High Crime Area"
 
+    # Estimate number of cases
     cases = math.ceil(crime_rate * pop)
 
     return render_template(
@@ -71,4 +76,5 @@ def predict_result():
     )
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000)) 
+    app.run(debug=True, host='0.0.0.0', port=port)
